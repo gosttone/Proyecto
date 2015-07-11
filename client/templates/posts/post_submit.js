@@ -9,6 +9,8 @@ Template.postSubmit.events({
       date: $(e.target).find('[name=eventDate]').val(),
       price: $(e.target).find('[name=eventPrice]').val()
     };
-  Meteor.call('postInsert',post)
+  Meteor.call('postInsert',post, function (){
+        Router.go('postsList');
+  });
 }
 });
