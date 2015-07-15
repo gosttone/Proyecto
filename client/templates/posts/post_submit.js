@@ -7,6 +7,7 @@ Template.postSubmit.events({
       description: $(e.target).find('[name=eventDesc]').val(),
       address: $(e.target).find('[name=eventAddress]').val(),
       date: Date.parse($(e.target).find('[name=eventDate]').val()),
+      //date: $(e.target).find('[name=eventDate]').val(),
       price: $(e.target).find('[name=eventPrice]').val()
     };
   Meteor.call('postInsert',post, function (){

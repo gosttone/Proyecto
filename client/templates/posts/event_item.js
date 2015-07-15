@@ -7,7 +7,6 @@ Template.eventItem.helpers({
       return 'disabled';
     }
   },
-
   goingEnable: function() {
     var userId = Meteor.userId();
     if (userId && !_.include(this.goingPeople, userId)) {
@@ -16,7 +15,6 @@ Template.eventItem.helpers({
       return 'disabled';
     }
   }
-
 });
 
 Template.eventItem.events({

@@ -1,3 +1,18 @@
+.headerEventItem {
+  color: white;
+  background: rgba(81, 91, 91, 0.6);
+  padding: 0.25px;
+  padding-left: 10px;
+  border-radius: 3px;
+  border-bottom: solid red;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); }
+
+h2 {
+  opacity: 1;
+}
+
 h4 {
   margin-left: 10px;
 }
@@ -131,17 +146,19 @@ body {
  white-space: nowrap; }
 
 .load-more {
+ color: white;
  display: block;
  border-radius: 3px;
- background: rgba(0, 0, 0, 0.05);
+ background: rgba(0, 0, 0, 0.20);
  text-align: center;
  height: 60px;
  line-height: 60px;
  margin-bottom: 10px; }
 
  .load-more:hover {
+ color: white;
  text-decoration: none;
- background: rgba(0, 0, 0, 0.1); }
+ background: rgba(0, 0, 0, 0.35); }
 
 .posts .spinner-container{
  position: relative;
