@@ -14,6 +14,12 @@ Template.eventItem.helpers({
     } else {
       return 'disabled';
     }
+  },
+  extractPeople: function(Names) {
+    Session.set('PeopleNames', Names);
+  },
+  insertPeople: function() {
+    return Session.get('PeopleNames')
   }
 });
 
@@ -25,5 +31,12 @@ Template.eventItem.events({
   'click .going': function(e) {
     e.preventDefault();
     Meteor.call('going', this._id);
+  },
+  'click .aList': function(e) {
+    e.prevenDefault();
+    Meteor.call('aList', this._id);
   }
+
+
+
 });
