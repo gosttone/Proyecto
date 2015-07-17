@@ -1,3 +1,5 @@
+var lastId;
+
 Template.eventItem.helpers({
   likesEnable: function() {
     var userId = Meteor.userId();
@@ -15,12 +17,9 @@ Template.eventItem.helpers({
       return 'disabled';
     }
   },
-  extractPeople: function(Names) {
-    Session.set('PeopleNames', Names);
+  extractPeople: function(Names, id) {
+
   },
-  insertPeople: function() {
-    return Session.get('PeopleNames')
-  }
 });
 
 Template.eventItem.events({
@@ -33,10 +32,23 @@ Template.eventItem.events({
     Meteor.call('going', this._id);
   },
   'click .aList': function(e) {
-    e.prevenDefault();
-    Meteor.call('aList', this._id);
+    e.preventDefault();
+    var Names = this.goingPeopleNames
+    var postId = this._id
+
+    if (postId === lastId) {
+      $("#"+postId).slideToggle();
+    }
+    if (postId !== lastId) {
+      $("#"+lastId).empty();
+      for (var name in Names) {
+        $("#"+postId).append("<p>"+ Names[name] +"</p>");
+      }
+      if ($("#"+lastId).html() !== "") {
+        $("#"+lastId).slideToggle();
+      }
+      $("#"+postId).slideToggle();
+    }
+      lastId = postId;
   }
-
-
-
 });

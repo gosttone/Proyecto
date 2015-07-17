@@ -8,36 +8,13 @@
       <p> {{convertToDate date}}</p>
       <p>
         <span id="likes">{{likes}} people likes this Event</span> ||
-      <a href="#" data-toggle="modal" data-target="#myModal" onclick="{{extractPeople goingPeopleNames}}">
+      <a href="#" class="aList">
         <span id="assistents">{{going}} people will go</span>
       </a>
       </p>
-
-        <div class="modal fade" id="myModal" role="dialog">
-          <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Attendees List</h4>
-              </div>
-              <div class="modal-body">
-                <p>
-                  {{#each insertPeople}}
-                        <p>
-                          * {{this}}
-                        </p>
-                  {{/each}}
-                </p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
+      <br>
+      <div class="dList" id="{{_id}}">
+      </div>
     </div>
     {{#if currentUser}}
     <button type="button" name="button" class="likes discuss btn btn-info {{likesEnable}}">
